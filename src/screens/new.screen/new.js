@@ -55,7 +55,7 @@ export default () => {
             history.push("/feed")
         }
         catch(err){
-            console.log(err)
+            console.log(Object.getOwnPropertyDescriptors(err))
             setLoading(false)
         }
     }
@@ -72,6 +72,7 @@ export default () => {
                 <input 
                     id="post"
                     type="file"
+                    required
                     onChange={e=>setImage(e.target.files[0])}
                 />
                 <img src={camera} width="50px" alt="selecinone uma imagem"/>
@@ -79,13 +80,15 @@ export default () => {
     
             <input 
                 type="text" 
-                name="place" 
+                name="place"
+                required
                 placeholder="Local o post"
                 value={place}
                 onChange = {e => setPlace(e.target.value)}
             />
             <input 
-                type="text" 
+                type="text"
+                required
                 name="description" 
                 placeholder="descrição do post"
                 value={descrption}
@@ -93,6 +96,7 @@ export default () => {
             />
             <input 
                 type="text" 
+                required
                 name="hashtags" 
                 placeholder="hashtags"
                 value={hashtags}
