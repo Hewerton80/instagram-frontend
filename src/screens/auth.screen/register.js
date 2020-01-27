@@ -32,7 +32,7 @@ export default () => {
             setMsgErro("")
             localStorage.setItem("user.id",response.data._id)
             localStorage.setItem("user.name",response.data.name)
-            history.push("/feed")
+            history.push("/new")
         }
         catch(err){
             console.log(Object.getOwnPropertyDescriptors(err))
